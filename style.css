@@ -1,0 +1,218 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to right,#0a0a0a, #010101);
+    margin: 0;
+    font-family: 'Nunito Sans';
+    color: aliceblue;
+}
+
+.tela{
+    height: 100vh;
+    width: 100vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    flex-direction: column;
+    margin: 1%;
+}
+
+.linha{
+    position: fixed;
+    background-color: aliceblue;
+    transition: background-color 1s ease, box-shadow 1s ease;
+    box-shadow:50px #ffffff;
+}
+
+#linha1, #linha2, #linha3{
+    top: 0;
+}
+
+#linha1{
+    right: 15px;
+    width: 5px;
+    height: 500px;
+}
+
+#linha2{
+    right: 50px;
+    width: 5px;
+    height: 400px;
+}
+
+#linha3{
+    right: 85px;
+    width: 5px;
+    height: 300px;
+}
+
+#linha4, #linha5, #linha6{
+    bottom: 0;
+}
+
+#linha4{
+    left: 15px;
+    width: 5px;
+    height: 500px;
+}
+
+#linha5{
+    left: 50px;
+    width: 5px;
+    height: 400px;
+}
+
+#linha6{
+    left: 85px;
+    width: 5px;
+    height: 300px;
+}
+
+/* Primeira tela  */
+.inicio{
+    margin-top: 35%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+h6{
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.glitch {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.rolar{
+    color: aliceblue;
+    text-align: center;
+    font-size: 30px;
+}
+
+.flecha{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid white;
+    position: relative;
+    animation: upDown 1s infinite;
+    margin-top: 2rem;
+}
+
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+}
+
+.glitch::before {
+    animation: glitchTop 0.2s infinite;
+    clip: rect(0, 900px, 0, 0);
+    color: rgb(109, 245, 255);
+    top: -2px;
+    left: 2px;
+    z-index: -1;
+}
+
+.glitch::after {
+    animation: glitchBottom 0.2s infinite;
+    clip: rect(0, 900px, 0, 0);
+    color: rgb(212, 0, 255);
+    top: 2px;
+    left: -2px;
+    z-index: -1;
+}
+
+/*Animações da primeira sessão */
+@keyframes glitchTop {
+    0%, 100% {
+        clip: rect(0, 900px, 0, 0);
+        transform: translate(-2px, -2px);
+    }
+    50% {
+        clip: rect(0, 900px, 50px, 0);
+        transform: translate(2px, 2px);
+    }
+}
+
+@keyframes glitchBottom {
+    0%, 100% {
+        clip: rect(0, 900px, 0, 0);
+        transform: translate(2px, 2px);
+    }
+    50% {
+        clip: rect(50px, 900px, 100px, 0);
+        transform: translate(-2px, -2px);
+    }
+}
+
+@keyframes upDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Segunda tela */
+.segunda{
+    margin: 30rem 0 20rem 0;
+}
+
+.escolha{
+    display: block;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.botoes{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+button{
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 15px 0px;
+    cursor: pointer;
+    padding: 10px 20px;
+    box-shadow: white;
+    outline: 2px solid white;
+    outline-offset: 5px;
+}
+
+button:hover{
+    scale: 1.5;
+    transition: 1s;
+    border: 0px  15px;
+    outline-offset: 0px;
+}
+
+#vermelho{
+    background-color: #FF0062;
+}
+
+#branco{
+    background-color: #ffffff;
+}
+
+#azul{
+    background-color: #00ffff;
+}
+
+#verde{
+    background-color: #33FF57;
+}
